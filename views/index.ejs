@@ -6,30 +6,70 @@
   <meta charset="utf-8">
   <base href="/" />
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" media="screen" title="no title">
+  <link type="text/css" rel="stylesheet" href="/bower_components/angular-flash-alert/dist/angular-flash.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   <link rel="stylesheet" href="/ngApp/css/site.css"/>
 </head>
 
-<body>
-  <div class="container">
-        <h1>dreamjournal</h1>
-        <div>
-          <a href="/">Home</a> /
-          <a href="/about">About</a>
+<body ng-cloak layout="column" flex ng-controller="MainController as controller">
+  <div class="container" layout="column" flex>
+    <md-toolbar layout="row" class="md-toolbartools">
+      <div class="titleCls">
+        <p>Dream Journal</p>
+      </div>
+      <span flex></span>
+      <div layout="row" layout-align="center center">
+        <form>
+            <input type="text" name="searchTxt" ng-model="controller.searchTxt">
+            <md-icon ng-click="controller.search()"><i class="material-icons iconsCls">search</i></md-icon>
+        </form>
+      </div>
+      <span flex></span>
+      <div layout="row">
+        <div layout-align="end end" layout="row"  >
+          <md-button class="nav-btn btnCls" ng-click="controller.home()" md-no-ink>Home</md-button>
+          <div>
+            <md-button class="nav-btn btnCls" ng-click="controller.login()">Login</md-button>
+            <md-button class="nav-btn btnCls" ng-click="controller.register()">Register</md-button>
+          </div>
+          <div>
+            <md-button class="nav-btn btnCls" ng-click="controller.logout()">Logout</md-button>
+          </div>
         </div>
-        <hr />
-        
-        <ui-view></ui-view>
+      </div>
+    </md-toolbar>
+    <div layout="column" flex layout-fill>
+      <md-content layout="column" flex >
+        <ui-view layout="column" flex></ui-view>
+      </md-content>
+    </div>
   </div>
 
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-material/angular-material.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-aria/angular-aria.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-messages/angular-messages.js"></script>
   <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
   <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="/bower_components/angular-password/angular-password.min.js"></script>
+  <script src="/bower_components/angular-flash-alert/dist/angular-flash.min.js"></script>
 
   <script src="/ngApp/app.js"></script>
+
+  <!--   Controllers -->
   <script src="/ngApp/controllers/controllers.js"></script>
+  <script src="/ngApp/controllers/accountController.js"></script>
+  <script src="/ngApp/controllers/mainPageController.js"></script>
+  <script src="/ngApp/controllers/addDreamController.js"></script>
+
+  
   <script src="/ngApp/services/services.js"></script>
 
 </body>

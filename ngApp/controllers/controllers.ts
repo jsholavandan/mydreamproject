@@ -1,8 +1,24 @@
 namespace dreamjournal.Controllers {
 
-    export class HomeController {
-        public message = 'Hello from the home page!';
+    export class MainController {
+
+        public home(){
+          this.$state.go('home');
+        }
+        public login(){
+          this.$state.go('login');
+        }
+
+        public register(){
+          this.$state.go('register');
+        }
+
+        constructor(private $state: ng.ui.IStateService){
+
+        }
     }
+
+    angular.module('dreamjournal').controller('MainController', MainController);
 
 
     export class AboutController {

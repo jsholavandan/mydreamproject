@@ -1,0 +1,217 @@
+/* general */
+
+.quoteCls{
+  text-align: center;
+  font-family:'Great Vibes', cursive;
+  font-size: 24px;
+  margin-top: 5px;
+  font-weight:bold;
+}
+
+.dateDivCls{
+  margin: 15px;
+  width:40%;
+}
+
+.sub-titleCls{
+  text-align: center;
+  font-family:'Great Vibes', cursive;
+  font-size: 24px;
+  margin-top: 5px;
+  font-weight:bold;
+  color:  rgb(148, 63, 181);
+}
+
+
+/*
+.dateSpanCls{
+  max-height: 22px;
+}
+*/
+
+
+/*
+.inputCls{
+  max-width: 150px;
+
+}
+
+.dateCls{
+  max-width: 190px;
+}
+
+
+
+.glyphicon{
+  top:-3px;
+}
+*/
+
+/* general */
+
+
+/* Main page styles */
+
+.titleCls{
+  margin: 8px 0 0 5px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar){
+  background-color: rgb(148, 63, 181);
+  color: white;
+}
+
+.mainBodyCls{
+  background-image: url('/ngApp/css/images/Amazing-night-sky.jpg');
+  border: 1px solid black;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.btnCls{
+  min-width:35px;
+  vertical-align: bottom;
+  font-size: 10px;
+  margin:0;
+/*  font-weight: bold;  */
+}
+
+.iconsCls{
+  font-size:18px;
+  margin-left:5px;
+}
+
+.material-icons{
+  line-height: .8;
+}
+md-toolbar input{
+  height:25px;
+  vertical-align: bottom;
+  border-radius:5px;
+  color:blue;
+  font-size:12px;
+  min-width: 250px;
+}
+
+
+
+/* Main page styles */
+
+/* Login / register page styles */
+.loginDivCls{
+  background-color: rgb(211, 105, 197);
+  padding-top: 25px;
+  color:white;
+}
+
+.signUpDivCls{
+  padding-top: 10px;
+}
+
+.loginFormCls{
+  background-color: white;
+  min-width: 350px;
+  min-height: 300px;
+  border: 1px solid white;
+  margin: 0 auto;
+  padding:40px 15px 10px 15px;
+  border-radius: 15px;
+}
+
+.signUpFormCls{
+  min-height: 400px;
+  padding-top: 20px;
+}
+
+.inputCls{
+  height:32px;
+}
+
+.error{
+  color: red;
+  font-size: 10px;
+}
+
+.buttonCls{
+  font-size: 12px;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.lblCls{
+  font-size: 10px;
+  color:black;
+}
+/* Login /register page styles */
+
+/* Main Page Styles */
+
+.choiceDivCls{
+  min-width: 180px;
+  height:160px;
+  border: 1px solid pink;
+  margin:25px;
+  float:left;
+  border-radius: 20px;
+  position:relative;
+}
+
+.mainPageDivCls{
+  width: 700px;
+  height: 490px;
+}
+
+.choiceDivCls img{
+  width:180px;
+  height:160px;
+  border-radius: 20px;
+}
+
+.captionDivCls{
+  position:absolute;
+  height:25px;
+  width:100%;
+  top:45px;
+  left:0px;
+  text-align: center;
+  color:rgb(148, 63, 181);
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.selected{
+  opacity: 0.5;
+}
+
+
+/* Main Page Styles */
+
+/* add dream page */
+.mainAddDiv{
+  border:1px solid pink;
+  padding:15px;
+}
+
+.emotionsImgCls{
+
+  height: 150px;
+  width: 300px;
+}
+/* add dream page */
+
+input[type="checkbox"] {    
+    vertical-align: bottom;
+}
+label.checkbox {
+    vertical-align: top;
+    line-height: 24px;
+    margin: 2px 0;
+    display: block;
+    height: 24px;
+}

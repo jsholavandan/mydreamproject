@@ -1,0 +1,31 @@
+<div class="" layout="column" layout-align="start center">
+  <div class="mainPageDivCls">
+    <h3 class="quoteCls">My Dream World</h3>
+    <div class="">
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('adddream')" ng-mouseleave="controller.setDiv('')" ng-click="controller.addDream()">
+        <img ng-src="/ngApp/css/images/adddream.jpg" alt="" ng-class="(controller.selectedDiv === 'adddream')? 'selected' : ''">
+        <div class="captionDivCls" ng-show="controller.selectedDiv === 'adddream'"> Add Dream</div>
+      </div>
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('calendar')" ng-mouseleave="controller.setDiv('')">
+        <img ng-src="/ngApp/css/images/calendar.jpg" alt="" ng-class="(controller.selectedDiv === 'calendar')? 'selected' : ''">
+        <div class="captionDivCls" ng-show="controller.selectedDiv === 'calendar'"> Dream Calendar</div>
+      </div>
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('dream-journal')" ng-mouseleave="controller.setDiv('')">
+        <img ng-src="/ngApp/css/images/dream-journal.png" alt="" ng-class="(controller.selectedDiv === 'dream-journal')? 'selected' : ''">
+        <div class="captionDivCls" ng-show="controller.selectedDiv === 'dream-journal'"> Dream Journal</div>
+      </div>
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('graphs')" ng-mouseleave="controller.setDiv('')">
+        <img ng-src="/ngApp/css/images/graphs.jpg" alt="" ng-class="(controller.selectedDiv === 'graphs')? 'selected' : ''">
+        <div class="captionDivCls" ng-show="controller.selectedDiv === 'graphs'">Dream Graphs</div>
+      </div>
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('interpret')" ng-mouseleave="controller.setDiv('')">
+        <img ng-src="/ngApp/css/images/interpret.jpg" alt="" ng-class="(controller.selectedDiv === 'interpret')? 'selected' : ''">
+        <div class="captionDivCls" ng-show="controller.selectedDiv === 'interpret'">Dream Interpretation</div>
+      </div>
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('selected')" ng-mouseleave="controller.setDiv('')">
+        <img ng-src="/ngApp/css/images/dream-journal.png" alt="" ng-class="(controller.selectedDiv === 'graphs')? 'selected' : ''">
+        <div class="captionDivCls" ng-show="controller.selectedDiv === 'selected'"> Add Dream</div>
+      </div>
+    </div>
+  </div>
+</div>

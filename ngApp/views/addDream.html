@@ -1,0 +1,82 @@
+<div class="" layout="column">
+  <div class="sub-titleCls">
+    <p>Add Dream</p>
+  </div>
+  <div class="mainAddDiv" layout="row">
+    <div class="" flex="50">
+      <div class="form-group">
+        <label for="" class="lblCls">Title</label>
+        <input type="text" name="title" ng-model="controller.newDream.title" class="form-control inputCls" placeholder="Title">
+      </div>
+    </div>
+    <div  flex="50">
+      <div class="pull-right dateDivCls">
+        <p class="input-group">
+            <input type="text" class="form-control mydateCls"
+             datepicker-popup="{{format}}"
+             ng-model="dt"
+             is-open="opened"
+             min-date="minDate"
+             max-date="'2015-06-22'"
+             datepicker-options="dateOptions"
+             date-disabled="disabled(date, mode)"
+             ng-required="true"
+             close-text="Close"
+             id="date-picker"
+             readonly
+             ng-click="open($event)"
+           />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- second row -->
+  <div class="mainAddDiv" layout="row">
+    <div class="" flex="50">
+      <div class="form-group" layout="column">
+        <label for="" class="lblCls">Narrate your dream</label>
+        <textarea name="name" rows="5" cols="50"></textarea>
+      </div>
+    </div>
+    <div  flex="50">
+      <div layout="column">
+        <div class="form-group">
+          <label for="nightmare" class="lblCls checkbox"><input type="checkbox" id="nightmare" name="nightmare" ng-model="controller.newDream.nightmare">Nightmare</label>
+        </div>
+        <div class="form-group">
+          <label for="nightmare" class="lblCls checkbox"><input type="checkbox" name="lucid" ng-model="controller.newDream.lucid">Lucid</label>
+        </div>
+        <div class="form-group">
+          <label for="recurrent" class="lblCls checkbox"><input type="checkbox" name="recurrent" ng-model="controller.newDream.recurrent">Recurrent</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- third row -->
+  <div class="mainAddDiv" layout="row">
+    <div class="" flex="50">
+      <div class="form-group" layout="column">
+        <label for="" class="lblCls">Emotions in the dream</label>
+        <img ng-src="/ngApp/css/images/emotions.png" alt="emotions" class="emotionsImgCls">
+      </div>
+    </div>
+    <div  flex="50">
+      <div layout="column">
+        <div class="form-group">
+          <label for="role" class="lblCls checkbox"><input type="checkbox" name="role" ng-model="controller.newDream.role">Is the dream about you?</label>
+        </div>
+        <div class="form-group">
+          <label for="pvt" class="lblCls checkbox"><input type="checkbox" name="pvt" ng-model="controller.newDream.pvt">Is this a Private dream?</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-primary btncls">Add Dream</button>
+  </div>
+
+</div>
