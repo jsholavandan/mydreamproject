@@ -12,8 +12,15 @@ namespace dreamjournal.Controllers {
       this.$state.go('addDream');
     }
 
-    constructor(private $state:ng.ui.IStateService){
+    public dreamJournal(){
+      this.$state.go('dreamJournal');
+    }
 
+    constructor(private $state:ng.ui.IStateService,
+                private $rootScope:ng.IRootScopeService){
+        if(this.$rootScope.currentUser === false){
+          this.$state.go('home');
+        }
     }
   }
 

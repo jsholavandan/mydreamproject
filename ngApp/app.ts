@@ -1,6 +1,6 @@
 namespace dreamjournal {
 
-    angular.module('dreamjournal', ['ngMessages', 'ngMaterial', 'ngAnimate', 'ngFlash', 'ngPassword', 'ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('dreamjournal', ['ngMapHilight','ngMessages', 'ngMaterial', 'ngAnimate', 'ngFlash', 'ngPassword', 'ui.router', 'ngResource', 'ui.bootstrap']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider
@@ -35,6 +35,24 @@ namespace dreamjournal {
               url:'/addDream',
               templateUrl: '/ngApp/views/addDream.html',
               controller: dreamjournal.Controllers.AddDreamController,
+              controllerAs: 'controller'
+            })
+            .state('dreamJournal', {
+              url: '/dreamJournal',
+              templateUrl: '/ngApp/views/dreamJournal.html',
+              controller: dreamjournal.Controllers.DreamJournalController,
+              controllerAs: 'controller'
+            })
+            .state('editDream', {
+              url: '/editDream/:id',
+              templateUrl:'/ngApp/views/editDream.html',
+              controller:dreamjournal.Controllers.EditDreamController,
+              controllerAs:"controller"
+            })
+            .state('showDream', {
+              url:'/showDream/:id',
+              templateUrl:'/ngApp/views/dream.html',
+              controller: dreamjournal.Controllers.ShowDreamController,
               controllerAs: 'controller'
             });
 

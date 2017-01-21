@@ -13,8 +13,23 @@ namespace dreamjournal.Controllers {
           this.$state.go('register');
         }
 
-        constructor(private $state: ng.ui.IStateService){
+        public mainPage(){
+          this.$state.go('mainPage');
+        }
 
+        public logout(){
+          this.$rootScope.currentUser = false;
+          this.$rootScope.username = null;
+          this.$window.localStorage.removeItem('token');
+          this.$state.go('home');
+        }
+
+
+        constructor(private $state: ng.ui.IStateService,
+                    private $window: ng.IWindowService,
+                    private $rootScope:ng.IRootScopeService){
+
+                    this.$rootScope.currentUser = false;
         }
     }
 

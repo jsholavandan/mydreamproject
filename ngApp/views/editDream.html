@@ -1,44 +1,44 @@
 <div class="sub-titleCls">
-  <p>Add Dream</p>
+  <p>Edit Dream</p>
 </div>
 <div class="mainAddDiv" layout="column">
   <flash-message duration="5000" class="align-center" on-dismiss="controller.closeDialog(flash)"></flash-message>
-  <form name="addDreamForm" ng-submit="controller.addDream()">
+  <form name="editDreamForm" ng-submit="controller.editDream()">
     <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-              <label for="" class="lblCls">Title</label>
-              <input type="text" name="title" ng-model="controller.newDream.title" class="form-control inputCls txtCls smallFontCls" placeholder="Title" required="true" class="form-control">
+      <div class="col-md-6">
+        <div class="form-group">
+            <label for="" class="lblCls">Title</label>
+            <input type="text" name="title" ng-model="controller.dream.title" class="form-control inputCls txtCls smallFontCls" placeholder="Title" required="true">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div layout="column" layout-align="center start">
+          <div class="dateDivCls">
+            <label for="" class="lblCls">Date</label>
+            <p class="input-group ">
+                <input type="text" class="form-control inputCls smallFontCls"
+                 uib-datepicker-popup="MM/dd/yyyy"
+                 ng-model="controller.dream.dreamDate"
+                 is-open="controller.popup.opened"
+                 ng-required="true"
+                 close-text="Close"
+                 id="date-picker"
+                 readonly
+                 ng-click="controller.open()"
+               />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default btnCls" ng-click="controller.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div layout="column" layout-align="center start">
-            <div class="dateDivCls">
-              <label for="" class="lblCls">Date</label>
-              <p class="input-group ">
-                  <input type="text" class="form-control inputCls smallFontCls"
-                   uib-datepicker-popup="MM/dd/yyyy"
-                   ng-model="controller.newDream.dreamDate"
-                   is-open="controller.popup.opened"
-                   ng-required="true"
-                   close-text="Close"
-                   id="date-picker"
-                   readonly
-                   ng-click="controller.open()"
-                 />
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-default btnCls" ng-click="controller.open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group" layout="column">
             <label for="" class="lblCls">Narrate your dream</label>
-            <textarea name="name" class="smallFontCls" ng-model="controller.newDream.content" class="form-control"></textarea>
+            <textarea name="name" class="smallFontCls" ng-model="controller.dream.content"></textarea>
         </div>
         <!-- -->
       </div>
@@ -46,15 +46,15 @@
         <div layout="column" layout-align="center start" >
           <div class="form-group checkboxDivCls">
             <label for="nightmare" class="lblCls checkbox">
-              <input type="checkbox" id="nightmare" name="nightmare" ng-model="controller.newDream.nightmare" ng-init="controller.newDream.nightmare=false">
+              <input type="checkbox" id="nightmare" name="nightmare" ng-model="controller.dream.nightmare" ng-init="controller.dream.nightmare=false">
               Nightmare
             </label>
             <label for="lucid" class="lblCls checkbox">
-              <input type="checkbox" id="lucid" name="lucid" ng-model="controller.newDream.lucid" ng-init="controller.newDream.lucid=false">
+              <input type="checkbox" id="lucid" name="lucid" ng-model="controller.dream.lucid" ng-init="controller.dream.lucid=false">
                 Lucid
               </label>
             <label for="recurrent" class="lblCls checkbox">
-              <input type="checkbox" id="recurring" name="recurring" ng-model="controller.newDream.recurring" ng-init="controller.newDream.recurring=false">
+              <input type="checkbox" id="recurring" name="recurring" ng-model="controller.dream.recurring" ng-init="controller.dream.recurring=false">
               Recurring
             </label>
           </div>
@@ -85,17 +85,17 @@
         <div layout="column" layout-align="center start" class="typeDivCls">
           <div class="form-group checkboxDivCls ">
             <label for="role" class="lblCls checkbox">
-              <input type="checkbox" name="role" ng-model="controller.newDream.role" ng-init="controller.newDream.role=false">
+              <input type="checkbox" name="role" ng-model="controller.dream.role" ng-init="controller.dream.role=false">
               Is the dream about you?
             </label>
             <label for="pvt" class="lblCls checkbox">
-              <input type="checkbox" name="pvt" ng-model="controller.newDream.pvt" ng-init="controller.newDream.pvt=true">
+              <input type="checkbox" name="pvt" ng-model="controller.dream.pvt" ng-init="controller.dream.pvt=true">
                 Is this a Private dream?
               </label>
           </div>
           <br/><br/>
           <div class="form-group" layout-align="center center" layout="column">
-            <button type="submit" class="btn btn-default btncls makeBold" >Add Dream</button>
+            <button type="submit" class="btn btn-default btncls makeBold">Edit Dream</button>
           </div>
         </div>
       </div>

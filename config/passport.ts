@@ -13,6 +13,7 @@ passport.deserializeUser(function(obj, done){
 });
 
 passport.use(new LocalStrategy(function(username, password, done){
+  console.log(username);
   User.findOne({username:username}, function(err, user){
     if(err){
       return done(err);
@@ -21,7 +22,7 @@ passport.use(new LocalStrategy(function(username, password, done){
     if(!user){
       return done(null, false, {message: "Invalid user"});
     }
-    if(!user.validateUser(password)){
+    if(!user.validatePassword(password)){
       return done(null, false, {message: 'Passwords dont match'});
     }
 

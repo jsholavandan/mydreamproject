@@ -4,7 +4,7 @@ namespace dreamjournal.Services {
     private LoginResource;
     private SignUpResource;
 
-    public loginUser(userInfo){
+    public loginUser(userInfo){      
       return this.LoginResource.save(userInfo).$promise;
     }
 
@@ -13,8 +13,8 @@ namespace dreamjournal.Services {
     }
 
     constructor(private $resource:ng.resource.IResourceService){
-      this.LoginResource = this.$resource('/userRoutes/Login/Local');
-      this.SignUpResource = this.$resource('/userRoutes/Register');
+      this.LoginResource = this.$resource('/userRoutes/api/Login/Local');
+      this.SignUpResource = this.$resource('/userRoutes/api/Register');
     }
   }
 

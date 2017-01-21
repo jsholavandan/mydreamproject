@@ -1,0 +1,32 @@
+<div class="sub-titleCls">
+  <p>Dream</p>
+</div>
+<div class="mainAddDiv showDreamDiv" layout="column">
+  <flash-message duration="5000" class="align-center" on-dismiss="controller.closeDialog(flash)"></flash-message>
+  <div class="row ">
+    <div class="col-md-6">
+      <div class="dreamContentCls">
+        <div class="dreamTitleCls">
+          <p>{{controller.dream.title}}</p>
+        </div>
+        <p>{{controller.dream.content}}</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="dreamContentCls">
+        <div class="dreamTitleCls">
+          <p>Emotions</p>
+        </div>
+        <p>{{controller.emoteString}}</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="dreamContentCls">
+        <div class="dreamTitleCls">
+          <p>Type of Dream</p>
+        </div>
+        <p>{{controller.typeString}}</p>
+      </div>
+    </div>
+  </div>
+</div>

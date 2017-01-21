@@ -11,12 +11,12 @@ let UserSchema = new mongoose.Schema({
 
 UserSchema.method("setPassword", function(password){
   this.salt = crypto.randomBytes(16).toString('hex');
-  this.passwordHash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+  this.passwordHash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha1').toString('hex');
 });
 
 UserSchema.method("validatePassword", function(password){
-  let hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
-  return hash === this.passwordHash;
+  let hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha1').toString('hex');
+  return (hash === this.passwordHash);
 });
 
 UserSchema.method("generateJWT", function(){

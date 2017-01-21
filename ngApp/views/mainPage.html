@@ -10,7 +10,7 @@
         <img ng-src="/ngApp/css/images/calendar.jpg" alt="" ng-class="(controller.selectedDiv === 'calendar')? 'selected' : ''">
         <div class="captionDivCls" ng-show="controller.selectedDiv === 'calendar'"> Dream Calendar</div>
       </div>
-      <div class="choiceDivCls" ng-mouseover="controller.setDiv('dream-journal')" ng-mouseleave="controller.setDiv('')">
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('dream-journal')" ng-mouseleave="controller.setDiv('')" ng-click="controller.dreamJournal()">
         <img ng-src="/ngApp/css/images/dream-journal.png" alt="" ng-class="(controller.selectedDiv === 'dream-journal')? 'selected' : ''">
         <div class="captionDivCls" ng-show="controller.selectedDiv === 'dream-journal'"> Dream Journal</div>
       </div>

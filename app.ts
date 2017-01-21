@@ -8,7 +8,9 @@ import * as ejs from 'ejs';
 import * as mongoose from 'mongoose';
 import * as passport from 'passport';
 
-import users from './routes/users';
+import users  from './routes/users';
+
+import dreams from './api/dreams';
 
 
 require('./models/user');
@@ -36,7 +38,9 @@ app.use(passport.initialize());
 mongoose.connect('mongodb://jayuser:jayuser@ds157078.mlab.com:57078/dreamjournal');
 
 
-app.use('/userRoutes', users);
+app.use('/userRoutes/api/', users);
+
+app.use('/api/dreams/', dreams);
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes

@@ -30,11 +30,12 @@
       <div layout="row">
         <div layout-align="end end" layout="row"  >
           <md-button class="nav-btn btnCls" ng-click="controller.home()" md-no-ink>Home</md-button>
-          <div>
+          <div ng-if="currentUser === false">
             <md-button class="nav-btn btnCls" ng-click="controller.login()">Login</md-button>
             <md-button class="nav-btn btnCls" ng-click="controller.register()">Register</md-button>
           </div>
-          <div>
+          <div ng-if="currentUser !== false">
+            <md-button class="nav-btn btnCls" ng-click="controller.mainPage()">My Account</md-button>
             <md-button class="nav-btn btnCls" ng-click="controller.logout()">Logout</md-button>
           </div>
         </div>
@@ -60,6 +61,8 @@
   <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="/bower_components/angular-password/angular-password.min.js"></script>
   <script src="/bower_components/angular-flash-alert/dist/angular-flash.min.js"></script>
+  <script src="/bower_components/angular-maphilight/lib/angular.maphilight.min.js"></script>
+
 
   <script src="/ngApp/app.js"></script>
 
@@ -68,9 +71,13 @@
   <script src="/ngApp/controllers/accountController.js"></script>
   <script src="/ngApp/controllers/mainPageController.js"></script>
   <script src="/ngApp/controllers/addDreamController.js"></script>
+  <script src="/ngApp/controllers/dreamJournalController.js"></script>
+  <script src="/ngApp/controllers/editDreamController.js"></script>
+  <script src="/ngApp/controllers/showDreamController.js"></script>
 
-  
+  <!-- Services -->
   <script src="/ngApp/services/services.js"></script>
+  <script src="/ngApp/services/dreamService.js"></script>
 
 </body>
 

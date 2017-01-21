@@ -22,6 +22,7 @@
     "animate.css": "^3.5.1",
     "angular-flash-alert": "^2.4.0",
     "angular-password": "^1.0.3",
-    "angular-material": "^1.1.1"
+    "angular-material": "^1.1.1",
+    "angular-maphilight": "*"
   }
 }
