@@ -14,7 +14,7 @@
         <img ng-src="/ngApp/css/images/dream-journal.png" alt="" ng-class="(controller.selectedDiv === 'dream-journal')? 'selected' : ''">
         <div class="captionDivCls" ng-show="controller.selectedDiv === 'dream-journal'"> Dream Journal</div>
       </div>
-      <div class="choiceDivCls" ng-mouseover="controller.setDiv('graphs')" ng-mouseleave="controller.setDiv('')">
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('graphs')" ng-mouseleave="controller.setDiv('')" ng-click="controller.dreamGraphs()">
         <img ng-src="/ngApp/css/images/graphs.jpg" alt="" ng-class="(controller.selectedDiv === 'graphs')? 'selected' : ''">
         <div class="captionDivCls" ng-show="controller.selectedDiv === 'graphs'">Dream Graphs</div>
       </div>

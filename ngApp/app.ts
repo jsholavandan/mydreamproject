@@ -1,6 +1,6 @@
 namespace dreamjournal {
 
-    angular.module('dreamjournal', ['ngMapHilight','ngMessages', 'ngMaterial', 'ngAnimate', 'ngFlash', 'ngPassword', 'ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('dreamjournal', ['angularMoment','ngMapHilight','ngMessages', 'googlechart', 'ngMaterial', 'ngAnimate', 'ngFlash', 'ngPassword', 'ui.router', 'ngResource', 'ui.bootstrap']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider
@@ -53,6 +53,18 @@ namespace dreamjournal {
               url:'/showDream/:id',
               templateUrl:'/ngApp/views/dream.html',
               controller: dreamjournal.Controllers.ShowDreamController,
+              controllerAs: 'controller'
+            })
+            .state('searchTxtDreams', {
+              url: '/searchTxtDreams/:txt',
+              templateUrl:'/ngApp/views/searchDreams.html',
+              controller: dreamjournal.Controllers.SearchTextController,
+              controllerAs: 'controller'
+            })
+            .state('dreamGraphs', {
+              url: '/dreamGraphs',
+              templateUrl: '/ngApp/views/dreamGraphs.html',
+              controller: dreamjournal.Controllers.DreamGraphController,
               controllerAs: 'controller'
             });
 

@@ -213,7 +213,7 @@ md-toolbar input{
 .emotionsImgCls{
 
   height: 250px;
-  width: 500px;
+  width: 350px;
 }
 
 .typeDivCls{
@@ -321,6 +321,47 @@ textarea{
 
 .showDreamDiv{
   height:90%;
+}
+
+.dreamFormCls{
+  font-size: 12px;
+}
+
+.form-cls{
+  margin-top: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.formBodyCls{
+  padding: 15px 15px 0px 15px;
+}
+.formBtnCls{
+  position: relative;
+}
+.formBtnCls button{
+  position:absolute;
+  top:55px;
+  left:0px;
+}
+
+.commentsDivCls{
+  margin-top:15px;
+  border:1px solid white;
+  border-radius: 5px;
+}
+
+.commentCls{
+  margin:5px;
+  background-color: lightpink;
+  font-size: 12px;
+}
+
+.commentCls span{
+  font-style: italic;
+}
+
+.mainGraphCls{
+  overflow:hidden;
 }
 
 

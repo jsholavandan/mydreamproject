@@ -2,7 +2,6 @@
   <p>Dream</p>
 </div>
 <div class="mainAddDiv showDreamDiv" layout="column">
-  <flash-message duration="5000" class="align-center" on-dismiss="controller.closeDialog(flash)"></flash-message>
   <div class="row ">
     <div class="col-md-6">
       <div class="dreamContentCls">
@@ -26,6 +25,51 @@
           <p>Type of Dream</p>
         </div>
         <p>{{controller.typeString}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-cls">
+    <div class=" dreamFormCls">
+      <div class="dreamTitleCls">
+        <p>Add comment</p>
+      </div>
+      <div class="formBodyCls">
+        <form name="commentForm" ng-submit="controller.addComment()">
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group">
+                <label for="title" class="lblCls">Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" name="commentTitle" ng-model="controller.comment.commentTitle">
+              </div>
+            </div>
+            <div class="col-md-7">
+              <flash-message duration="5000" class="align-center comment-flash"></flash-message>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group dreamFormCls">
+                <label for="text" class="lblCls">Comment:</label>
+                <textarea name="text" rows="8" cols="60" ng-model="controller.comment.text"></textarea>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="form-group formBtnCls">
+                <button type="submit" class="btn btn-default btnCls ">Add Comment</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="commentsDivCls">
+    <div ng-repeat="comment in controller.dream.comments" class="commentCls">
+      <div class="">
+        {{comment.commentTitle}} - <span>{{comment.username}}</span>
+      </div>
+      <div class="">
+        {{comment.text}}
       </div>
     </div>
   </div>

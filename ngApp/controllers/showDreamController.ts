@@ -4,17 +4,42 @@ namespace dreamjournal.Controllers {
       public dream;
       public emoteString;
       public typeString;
+      public comment ={
+        commentTitle:'',
+        text:''
+      };
+
+      public addComment(){
+        if(this.$rootScope.currentUser === false){
+          this.Flash.create('danger', "Please login to post comments.");
+          return false;
+        }
+        if(this.comment.commentTitle === '' || this.comment.text === ''){
+          this.Flash.create('danger', "Fill in all the fields before submitting.");
+          return false;
+        }
+        this.comment.username = this.$rootScope.username;
+        this.dream.comments.push(this.comment);
+        this.dreamService.saveDream(this.dream).then((res)=>{
+          this.Flash.create('success', "Comment added successfully.");
+        }).catch((err) => {
+          this.Flash.create('danger', "Error occured. Please try again.");
+        });
+      }
 
       constructor(private dreamService: dreamjournal.Services.DreamService,
                   private $stateParams: ng.ui.IStateParamsService,
-                  private $state: ng.ui.IStateService){
+                  private $state: ng.ui.IStateService,
+                  private Flash,
+                  private $rootScope: ng.IRootScopeService){
             let dreamId = this.$stateParams['id'];
             this.dreamService.getDream(dreamId).$promise.then((dream) => {
               this.dream = dream;
               this.emoteString = dream.emotions.join(' , ');
               this.typeString = (dream.nightmare? 'Nightmare , ' : '') + (dream.lucid ? 'Lucid , ' : '') + (dream.recurring ? 'Recurring , ' : '');
+            }).catch((err) => {
+              console.log(err);
             });
-
       }
     }
     angular.module('dreamjournal').controller('ShowDreamController', ShowDreamController);

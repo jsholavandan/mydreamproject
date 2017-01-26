@@ -23,6 +23,9 @@
     "angular-flash-alert": "^2.4.0",
     "angular-password": "^1.0.3",
     "angular-material": "^1.1.1",
-    "angular-maphilight": "*"
+    "angular-maphilight": "*",
+    "angular-google-chart": "0.1.0",
+    "moment": "^2.17.1",
+    "angular-moment": "^1.0.1"
   }
 }

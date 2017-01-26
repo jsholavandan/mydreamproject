@@ -11,6 +11,7 @@ import * as passport from 'passport';
 import users  from './routes/users';
 
 import dreams from './api/dreams';
+import search from './api/search';
 
 
 require('./models/user');
@@ -41,6 +42,7 @@ mongoose.connect('mongodb://jayuser:jayuser@ds157078.mlab.com:57078/dreamjournal
 app.use('/userRoutes/api/', users);
 
 app.use('/api/dreams/', dreams);
+app.use('/api/searchText', search);
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes

@@ -5,7 +5,7 @@ namespace dreamjournal.Controllers {
         comments:[],
         username:'',
         dreamDate: new Date()
-      };
+      };      
 
       public emoteString;
       public popup = {
@@ -14,7 +14,7 @@ namespace dreamjournal.Controllers {
 
       public configObj = {
         "fade": true,
-        "alwaysOn": false,
+        "alwaysOn": true,
         "neverOn": false,
         "fill": true,
         "fillColor": "#ffffff",
@@ -22,7 +22,7 @@ namespace dreamjournal.Controllers {
         "stroke": true,
         "strokeColor": "#4d0ec0",
         "strokeOpacity": 1,
-        "strokeWidth": 1,
+        "strokeWidth": 4,
         "shadow": true,
         "shadowColor": "#000000",
         "shadowOpacity": 0.8,
@@ -68,7 +68,7 @@ namespace dreamjournal.Controllers {
                   private Flash,
                   private $state:ng.ui.IStateService){
             if(this.$rootScope.currentUser === false){
-              this.$state.go('home');
+          //    this.$state.go('home');
             }
 
       }

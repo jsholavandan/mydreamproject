@@ -14,6 +14,10 @@ namespace dreamjournal.Controllers {
       this.$state.go('showDream', {id:id});
     }
 
+    public closeDialog(flash){
+      
+    }
+
     constructor(private dreamService: dreamjournal.Services.DreamService,
                 private $rootScope:ng.IRootScopeService,
                 private $state:ng.ui.IStateService){

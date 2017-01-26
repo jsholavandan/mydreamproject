@@ -1,6 +1,7 @@
 namespace dreamjournal.Controllers {
 
     export class MainController {
+      public searchTxt;
 
         public home(){
           this.$state.go('home');
@@ -24,6 +25,10 @@ namespace dreamjournal.Controllers {
           this.$state.go('home');
         }
 
+        public search(){
+          this.$state.go('searchTxtDreams', {txt: this.searchTxt});
+        }
+
 
         constructor(private $state: ng.ui.IStateService,
                     private $window: ng.IWindowService,
@@ -34,10 +39,5 @@ namespace dreamjournal.Controllers {
     }
 
     angular.module('dreamjournal').controller('MainController', MainController);
-
-
-    export class AboutController {
-        public message = 'Hello from the about page!';
-    }
 
 }
