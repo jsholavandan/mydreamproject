@@ -1,0 +1,12 @@
+<div class="sub-titleCls">
+  <p>Dream Calendar</p>
+</div>
+<div class="mainAddDiv" layout="column">
+  <flash-message duration="3000" class="align-center" on-dismiss="controller.closeDialog(flash)"></flash-message>
+  <div class="row">
+    <div class="col-md-12 align-center" >
+      <div style="display:inline-block; min-height:390px;">
+      <div uib-datepicker ng-model="controller.dt"  class="well well-sm myDateCls" datepicker-options="controller.options"></div>
+    </div>
+  </div>
+</div>

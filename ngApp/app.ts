@@ -66,6 +66,12 @@ namespace dreamjournal {
               templateUrl: '/ngApp/views/dreamGraphs.html',
               controller: dreamjournal.Controllers.DreamGraphController,
               controllerAs: 'controller'
+            })
+            .state('dreamCalendar',{
+              url:'/dreamCalendar',
+              templateUrl:'/ngApp/views/dreamCalendar.html',
+              controller: dreamjournal.Controllers.DreamCalendarController,
+              controllerAs: 'controller'
             });
 
         // Handle request for non-existent route
