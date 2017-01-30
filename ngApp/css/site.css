@@ -55,6 +55,14 @@
 
 /* general */
 
+/* Home Page */
+
+.homePageDivClass{
+  width:55%;
+  margin:35px auto;
+}
+
+/* Home Page */
 
 /* Main page styles */
 
@@ -207,7 +215,7 @@ md-toolbar input{
 .mainAddDiv{
   padding:0px 25px 0px 25px;
   background-color: rgb(211, 105, 197);
-  height: 90%;
+  height: 100%;
 }
 
 .emotionsImgCls{
@@ -295,6 +303,7 @@ textarea{
   border-radius: 5px;
   font-size:12px;
   width:85%;
+  color:black;
 }
 
 .pagerCls{
@@ -377,3 +386,56 @@ textarea{
 }
 
 /* show dream */
+
+/* Settings */
+/*
+.profileDivCls{
+  width: 50%;
+}
+
+.profileDivCls input{
+  width: 250px;
+}
+*/
+.settingsFormDiv{
+  width:60%;
+}
+
+.settingsFormDiv input{
+  width:200px;
+}
+
+.passwordDiv{
+  padding:10px;
+  width:250px;
+  border:1px solid white;
+  margin:15px 15px 15px 0;
+  border-radius:5px;
+}
+
+
+.submitButtondiv{
+  width:250px;
+  position: relative;
+}
+
+.profileDiv{
+  padding:10px;
+  width:500px;
+  border:1px solid white;
+  margin:0px 15px 15px 0;
+  border-radius:5px;
+
+}
+
+.saveChangesCls{
+    position:absolute;
+    top:60px;
+    left:120px;
+}
+
+.alignSettingsDiv{
+  margin:0 auto;
+}
+
+/*  Settings */

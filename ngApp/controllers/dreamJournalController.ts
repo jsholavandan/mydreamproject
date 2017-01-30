@@ -15,12 +15,16 @@ namespace dreamjournal.Controllers {
     }
 
     public closeDialog(flash){
-      
+
     }
 
     constructor(private dreamService: dreamjournal.Services.DreamService,
                 private $rootScope:ng.IRootScopeService,
                 private $state:ng.ui.IStateService){
+
+      if(this.$rootScope.currentUser === false){
+        this.$state.go('home');
+      }
       this.dreamService.listDreams(this.$rootScope.username).$promise.then((dreams) => {
         this.dreams = dreams;
         this.totalItems = dreams.length;

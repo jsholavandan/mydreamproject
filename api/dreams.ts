@@ -3,13 +3,25 @@ import Dream from '../models/dream';
 
 let router = express.Router();
 
+router.get('/publicDreams', (req, res) => {
+  console.log("hello");
+  Dream.find({pvt:false}).then((dreams) => {
+    console.log(dreams);
+    res.json(dreams);
+  }).catch((err) => {
+    console.log(err);
+    res.status(500);
+  });
+});
+
+
 router.get('/', (req, res) => {
   let username = req.query.username;
   Dream.find({username:username}).then((dreams) => {
     res.json(dreams);
   }).catch((err) => {
-    res.status(500);
     console.log(err);
+    res.status(500);
   });
 });
 
@@ -53,5 +65,6 @@ router.post('/:id',(req, res) => {
     });
   });
 });
+
 
 export default router;

@@ -1,16 +1,14 @@
-<div class="sub-titleCls">
+<div class="mainBodyCls" layout="column" flex layout-fill>
+<div class="quoteCls">
   <p>Search Results</p>
 </div>
-<div class="mainAddDiv" layout="column">
+<div class="homePageDivClass" layout="column">
   <flash-message duration="5000" class="align-center" on-dismiss="controller.closeDialog(flash)"></flash-message>
   <div class="row">
     <div class="col-md-12">
        <uib-accordion >
          <div uib-accordion-group class="panel-default smallFontCls" heading="{{dream.title}}" ng-repeat="dream in controller.dreams.slice(((controller.currentPage-1)*controller.itemsPerPage), ((controller.currentPage)*controller.itemsPerPage))">
            <div layout="row">
-             <div>
-               <md-icon ng-click="controller.editDream(dream._id)" title="Edit"><i class="material-icons iconsCls journalIconCls">edit</i></md-icon>
-             </div>
              <div>
                <md-icon ng-click="controller.showDream(dream._id)" title="Show"><i class="material-icons iconsCls journalIconCls">launch</i></md-icon>
              </div>
@@ -26,3 +24,4 @@
   <div class="pagerCls">
     <ul uib-pager total-items="controller.totalItems" ng-model="controller.currentPage" items-per-page="controller.itemsPerPage"></ul>
   </div>
+</div>

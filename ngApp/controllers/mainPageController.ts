@@ -24,6 +24,10 @@ namespace dreamjournal.Controllers {
       this.$state.go('dreamCalendar');
     }
 
+    public dreamProfile(){
+      this.$state.go('dreamProfile');
+    }
+
     constructor(private $state:ng.ui.IStateService,
                 private $rootScope:ng.IRootScopeService){
         if(this.$rootScope.currentUser === false){

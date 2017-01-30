@@ -56,7 +56,11 @@ namespace dreamjournal.Controllers {
     constructor(private dreamService:dreamjournal.Services.DreamService,
                 private $stateParams:ng.ui.IStateParamsService,
                 private $state:ng.ui.IStateService,
-                private Flash){
+                private Flash,
+                private $rootScope:ng.IRootScopeService){
+      if(this.$rootScope.currentUser === false){
+        this.$state.go('home');
+      }
       let dreamId = this.$stateParams['id'];
       this.dreamService.getDream(dreamId).$promise.then((dream) => {
         this.dream = dream;

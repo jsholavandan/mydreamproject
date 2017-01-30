@@ -2,6 +2,10 @@ namespace dreamjournal.Controllers {
 
     export class MainController {
       public searchTxt;
+      public dreams;
+      public totalItems;
+      public currentPage;
+      public itemsPerPage = 5;
 
         public home(){
           this.$state.go('home');
@@ -26,15 +30,34 @@ namespace dreamjournal.Controllers {
         }
 
         public search(){
-          this.$state.go('searchTxtDreams', {txt: this.searchTxt});
+          if(this.$rootScope.currentUser){
+            this.$state.go('searchTxtDreams', {txt: this.searchTxt});
+          }else{
+              console.log(this.searchTxt);
+            this.$state.go('searchPublic',{txt: this.searchTxt});
+          }
+        }
+
+        public showDream(id){
+          this.$state.go('showDream', {id:id});
         }
 
 
         constructor(private $state: ng.ui.IStateService,
                     private $window: ng.IWindowService,
-                    private $rootScope:ng.IRootScopeService){
+                    private $rootScope:ng.IRootScopeService,
+                    private dreamService: dreamjournal.Services.DreamService,
+                    private Flash){
 
-                    this.$rootScope.currentUser = false;
+            this.$rootScope.currentUser = false;
+            this.dreamService.listPublicDreams().$promise.then((dreams) => {
+              this.dreams = dreams;
+              this.totalItems = dreams.length;
+              this.currentPage = 1;
+              if(dreams.length === 0){
+                this.Flash.create('info', "No public dreams available.")
+              }
+            });
         }
     }
 

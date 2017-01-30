@@ -174,8 +174,11 @@ namespace dreamjournal.Controllers {
       constructor(private searchService: dreamjournal.Services.SearchService,
                   private $rootScope:ng.IRootScopeService,
                   private Flash,
-                  private moment){
-
+                  private moment,
+                  private $state:ng.ui.IStateService){
+          if(this.$rootScope.currentUser === false){
+            this.$state.go('home');
+          }
         this.searchService.listUserDreams(this.$rootScope.username).$promise.then((dreams) => {
           this.dreams = dreams;
           this.makeEmotionsChart(dreams);

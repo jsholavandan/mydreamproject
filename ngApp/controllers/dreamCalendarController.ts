@@ -37,7 +37,7 @@ namespace dreamjournal.Controllers {
           }
           if(id !== 0){
             this.$state.go('showDream',{id:id});
-          }          
+          }
         }
       }
 
@@ -47,6 +47,9 @@ namespace dreamjournal.Controllers {
                   private moment,
                   private $scope:ng.IScope,
                   private $state:ng.ui.IStateService){
+        if(this.$rootScope.currentUser === false){
+          this.$state.go('home');
+        }
         this.searchService.listUserDreams(this.$rootScope.username).$promise.then((dreams)=>{
           this.dreams = dreams;
           this.dt = this.moment().add(1,'days');

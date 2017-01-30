@@ -5,7 +5,7 @@ namespace dreamjournal.Controllers {
         comments:[],
         username:'',
         dreamDate: new Date()
-      };      
+      };
 
       public emoteString;
       public popup = {
@@ -68,7 +68,7 @@ namespace dreamjournal.Controllers {
                   private Flash,
                   private $state:ng.ui.IStateService){
             if(this.$rootScope.currentUser === false){
-          //    this.$state.go('home');
+              this.$state.go('home');
             }
 
       }

@@ -22,9 +22,9 @@
         <img ng-src="/ngApp/css/images/interpret.jpg" alt="" ng-class="(controller.selectedDiv === 'interpret')? 'selected' : ''">
         <div class="captionDivCls" ng-show="controller.selectedDiv === 'interpret'">Dream Interpretation</div>
       </div>
-      <div class="choiceDivCls" ng-mouseover="controller.setDiv('selected')" ng-mouseleave="controller.setDiv('')">
-        <img ng-src="/ngApp/css/images/dream-journal.png" alt="" ng-class="(controller.selectedDiv === 'graphs')? 'selected' : ''">
-        <div class="captionDivCls" ng-show="controller.selectedDiv === 'selected'"> Add Dream</div>
+      <div class="choiceDivCls" ng-mouseover="controller.setDiv('profile')" ng-mouseleave="controller.setDiv('')" ng-click="controller.dreamProfile()">
+        <img ng-src="/ngApp/css/images/profile.jpg" alt="" ng-class="(controller.selectedDiv === 'profile')? 'selected' : ''">
+        <div class="captionDivCls" ng-show="controller.selectedDiv === 'profile'">Dream Profile</div>
       </div>
     </div>
   </div>

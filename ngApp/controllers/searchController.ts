@@ -28,17 +28,31 @@ namespace dreamjournal.Controllers {
                   private $state:ng.ui.IStateService){
           let srchTxt = this.$stateParams['txt'];
           console.log(srchTxt);
-          this.searchService.searchDreams(this.$rootScope.username, srchTxt).$promise.then((dreams) => {
-            this.dreams = dreams;
-            this.totalItems = dreams.length;
-            this.currentPage = 1;
-            if(dreams.length === 0){
-              this.Flash.create('info', "Sorry, no results found.")
-            }
-          }).catch((err) => {
-            console.log(err);
-            this.Flash.create('danger', 'Error occured. Please try again');
-          });
+          if(this.$rootScope.currentUser){
+            this.searchService.searchDreams(this.$rootScope.username, srchTxt).$promise.then((dreams) => {
+              this.dreams = dreams;
+              this.totalItems = dreams.length;
+              this.currentPage = 1;
+              if(dreams.length === 0){
+                this.Flash.create('info', "Sorry, no results found.")
+              }
+            }).catch((err) => {
+              console.log(err);
+              this.Flash.create('danger', 'Error occured. Please try again');
+            });
+          }else{
+            this.searchService.searchPublicDreams(srchTxt).$promise.then((dreams) => {
+              this.dreams = dreams;
+              this.totalItems = dreams.length;
+              this.currentPage = 1;
+              if(dreams.length === 0){
+                this.Flash.create('info', "Sorry, no results found.")
+              }
+            }).catch((err) => {
+              console.log(err);
+              this.Flash.create('danger', 'Error occured. Please try again');
+            });
+          }
       }
     }
     angular.module("dreamjournal").controller("SearchTextController", SearchTextController);
