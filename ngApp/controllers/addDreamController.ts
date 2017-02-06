@@ -14,7 +14,7 @@ namespace dreamjournal.Controllers {
 
       public configObj = {
         "fade": true,
-        "alwaysOn": true,
+        "alwaysOn": false,
         "neverOn": false,
         "fill": true,
         "fillColor": "#ffffff",

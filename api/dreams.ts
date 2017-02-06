@@ -6,7 +6,7 @@ let router = express.Router();
 router.get('/publicDreams', (req, res) => {
   console.log("hello");
   Dream.find({pvt:false}).then((dreams) => {
-    console.log(dreams);
+  //  console.log(dreams);
     res.json(dreams);
   }).catch((err) => {
     console.log(err);
