@@ -79,6 +79,18 @@ var dreamjournal;
             templateUrl: '/ngApp/views/searchPublicDreams.html',
             controller: dreamjournal.Controllers.SearchTextController,
             controllerAs: 'controller'
+        })
+            .state('interpret', {
+            url: '/interpret',
+            templateUrl: '/ngApp/views/interpret.html',
+            controller: dreamjournal.Controllers.InterpretController,
+            controllerAs: "controller"
+        })
+            .state('interpret.meanings', {
+            url: '/dreamMeanings/:symbol',
+            templateUrl: '/ngApp/views/dreamMeanings.html',
+            controller: dreamjournal.Controllers.DreamMeaningsController,
+            controllerAs: 'controller'
         });
         $urlRouterProvider.otherwise('/home');
         $locationProvider.html5Mode(true);

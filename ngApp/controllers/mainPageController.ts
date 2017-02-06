@@ -29,6 +29,7 @@ namespace dreamjournal.Controllers {
     }
 
     public dreamInterpretation(){
+      console.log("hello");
       this.$state.go('interpret');
     }
 

@@ -28,6 +28,10 @@ var dreamjournal;
             MainPageController.prototype.dreamProfile = function () {
                 this.$state.go('dreamProfile');
             };
+            MainPageController.prototype.dreamInterpretation = function () {
+                console.log("hello");
+                this.$state.go('interpret');
+            };
             return MainPageController;
         }());
         Controllers.MainPageController = MainPageController;

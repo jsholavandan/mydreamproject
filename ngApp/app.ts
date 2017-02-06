@@ -86,13 +86,13 @@ namespace dreamjournal {
               controllerAs: 'controller'
             })
             .state('interpret', {
-              url:'/interpret/:symbol',
+              url:'/interpret',
               templateUrl:'/ngApp/views/interpret.html',
               controller: dreamjournal.Controllers.InterpretController,
               controllerAs: "controller"
             })
             .state('interpret.meanings',{
-              url:'/dreamMeanings',
+              url:'/dreamMeanings/:symbol',
               templateUrl:'/ngApp/views/dreamMeanings.html',
               controller:dreamjournal.Controllers.DreamMeaningsController,
               controllerAs: 'controller'
