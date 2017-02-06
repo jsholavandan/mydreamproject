@@ -1,10 +1,10 @@
 <div class="resultsDiv">
   <div class="resultsContent">
     <flash-message duration="5000"></flash-message>
-    <div ng-show="controller.dreamMeaning.loading">
+    <div ng-show="controller.loading">
       <h4>{{controller.dreamMeaning.label}}</h4>
       <p>{{controller.dreamMeaning.content}}</p>
     </div>
-    <i class="fa fa-refresh fa-spin" ng-show="!controller.dreamMeaning.loading"></i>
+    <i class="fa fa-refresh fa-spin" ng-show="!controller.loading"></i>
   </div>
 </div>

@@ -12,6 +12,7 @@ namespace dreamjournal.Controllers {
           console.log(symbol);
           this.interpretService.getMeaning(symbol).$promise.then((meaning) => {
             this.dreamMeaning = meaning;
+            //console.log(meaning);
           }).catch((err) => {
             this.Flash.create('danger', 'Sorry, no results found.');
           }).finally(() =>{

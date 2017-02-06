@@ -9,12 +9,15 @@ var dreamjournal;
                 this.interpretService = interpretService;
                 this.$stateParams = $stateParams;
                 this.Flash = Flash;
+                this.loading = false;
                 var symbol = this.$stateParams['symbol'];
                 console.log(symbol);
                 this.interpretService.getMeaning(symbol).$promise.then(function (meaning) {
                     _this.dreamMeaning = meaning;
                 }).catch(function (err) {
                     _this.Flash.create('danger', 'Sorry, no results found.');
+                }).finally(function () {
+                    _this.loading = true;
                 });
             }
             return DreamMeaningsController;
