@@ -28,6 +28,10 @@ namespace dreamjournal.Controllers {
       this.$state.go('dreamProfile');
     }
 
+    public dreamInterpretation(){
+      this.$state.go('interpret');
+    }
+
     constructor(private $state:ng.ui.IStateService,
                 private $rootScope:ng.IRootScopeService){
         if(this.$rootScope.currentUser === false){

@@ -1,0 +1,19 @@
+<div class="sub-titleCls">
+  <p>Interpret My Dream</p>
+</div>
+<div class="mainAddDiv" layout="column">
+  <div class="symbolFormCls">
+    <form name="interpretForm" ng-submit="controller.interpretDream()">
+      <div layout="row" layout-align="center end">
+        <div layout="column">
+          <label for="symbol" class="lblCls symbolLblCls">Enter a Dream Symbol:</label>
+          <input type="text" name="symbol" ng-model="controller.symbol" class="inputCls form-control symbolInputCls">
+        </div>
+        <button type="submit" class="btn btn-default btnCls">Interpret</button>
+      </div>
+    </form>
+  </div>
+  <div class="listCls">
+    <ui-view layout="column" layout-fill></ui-view>
+  </div>
+</div>

@@ -439,3 +439,44 @@ textarea{
 }
 
 /*  Settings */
+
+/* interpretation */
+.symbolInputCls{
+  width:150px;
+  margin-right: 10px;
+}
+
+.symbolLblCls{
+  color:white;
+}
+
+.symbolFormCls{
+  margin-top:25px;
+  margin-bottom: 5px;
+}
+
+.listCls{
+  width: 80%;
+  height: 75%;  
+  margin:0 auto;
+}
+
+/* interpretation */
+
+/* dream meaning */
+.resultsDiv{
+  height:90%;
+  width:100%;
+  text-align:center;
+}
+
+.resultsContent{
+  height: 70%;
+  width:70%;
+  color:white;
+  font-size: 14px;
+  font-style: italic;
+  margin:0 auto;
+  padding-top:15px;
+}
+/* dream meaning */

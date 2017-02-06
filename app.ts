@@ -12,6 +12,7 @@ import users  from './routes/users';
 
 import dreams from './api/dreams';
 import search from './api/search';
+import interpret from './api/interpret';
 
 
 require('./models/user');
@@ -43,6 +44,7 @@ app.use('/userRoutes/api/', users);
 
 app.use('/api/dreams/', dreams);
 app.use('/api/searchText', search);
+app.use('/api/services', interpret);
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes
