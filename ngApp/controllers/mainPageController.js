@@ -29,7 +29,6 @@ var dreamjournal;
                 this.$state.go('dreamProfile');
             };
             MainPageController.prototype.dreamInterpretation = function () {
-                console.log("hello");
                 this.$state.go('interpret');
             };
             return MainPageController;

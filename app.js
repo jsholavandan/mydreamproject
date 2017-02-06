@@ -9,6 +9,7 @@ var passport = require("passport");
 var users_1 = require("./routes/users");
 var dreams_1 = require("./api/dreams");
 var search_1 = require("./api/search");
+var interpret_1 = require("./api/interpret");
 require('./models/user');
 require('./config/passport');
 var app = express();
@@ -27,6 +28,7 @@ mongoose.connect('mongodb://jayuser:jayuser@ds157078.mlab.com:57078/dreamjournal
 app.use('/userRoutes/api/', users_1.default);
 app.use('/api/dreams/', dreams_1.default);
 app.use('/api/searchText', search_1.default);
+app.use('/api/services', interpret_1.default);
 app.get('/*', function (req, res, next) {
     if (/.js|.html|.css|templates|js|scripts/.test(req.path) || req.xhr) {
         return next({ status: 404, message: 'Not Found' });
