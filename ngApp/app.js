@@ -91,8 +91,14 @@ var dreamjournal;
             templateUrl: '/ngApp/views/dreamMeanings.html',
             controller: dreamjournal.Controllers.DreamMeaningsController,
             controllerAs: 'controller'
+        })
+            .state('token', {
+            url: '/Token/:token',
+            templateUrl: '/ngApp/views/token.html',
+            controller: dreamjournal.Controllers.TokenController,
+            controllerAs: 'controller'
         });
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
     });
 })(dreamjournal || (dreamjournal = {}));

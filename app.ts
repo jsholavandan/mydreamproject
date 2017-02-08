@@ -9,6 +9,7 @@ import * as mongoose from 'mongoose';
 import * as passport from 'passport';
 
 import users  from './routes/users';
+import fbUsers from './routes/facebookUsers';
 
 import dreams from './api/dreams';
 import search from './api/search';
@@ -33,18 +34,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 app.use('/ngApp', express.static(path.join(__dirname, 'ngApp')));
-app.use('/api', express.static(path.join(__dirname, 'api')));
+//app.use('/api', express.static(path.join(__dirname, 'api')));
 
 app.use(passport.initialize());
+//app.use(passport.session());
 
 mongoose.connect('mongodb://jayuser:jayuser@ds157078.mlab.com:57078/dreamjournal');
 
 
 app.use('/userRoutes/api/', users);
+app.use('/api/Facebook', fbUsers);
 
 app.use('/api/dreams/', dreams);
 app.use('/api/searchText', search);
 app.use('/api/services', interpret);
+
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes

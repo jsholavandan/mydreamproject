@@ -166,6 +166,10 @@ md-toolbar input{
   font-size: 10px;
   color:black;
 }
+
+.loginBtn{
+  height: 26px;
+}
 /* Login /register page styles */
 
 /* Main Page Styles */
@@ -457,7 +461,7 @@ textarea{
 
 .listCls{
   width: 80%;
-  height: 75%;  
+  height: 75%;
   margin:0 auto;
 }
 

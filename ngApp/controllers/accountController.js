@@ -9,10 +9,7 @@ var dreamjournal;
                 this.Flash = Flash;
                 this.$window = $window;
                 this.$rootScope = $rootScope;
-                this.userInfo = {
-                    username: 'sai',
-                    password: 'baba'
-                };
+                this.userInfo = {};
             }
             AccountController.prototype.setToken = function (data) {
                 this.$window.localStorage.setItem("token", JSON.stringify(data.token));
