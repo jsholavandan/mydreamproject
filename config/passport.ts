@@ -56,7 +56,7 @@ passport.use(new FacebookStrategy({
       newUser.facebookId = profile.id;
       newUser.name = profile.name.givenName;
       newUser.email = profile.emails[0].value;
-      newUser.username = newUser.email.split("@")[0];
+      newUser.username = newUser.email;
       newUser.gender = profile.gender;
       newUser.save().then((newdUser) => {
         req.login(newUser,function(err){

@@ -12,7 +12,7 @@ var dreamjournal;
                 console.log(token);
                 this.setToken(token);
                 var decodedStr = this.decodeToken(token);
-                var username = decodedStr.email.split('@')[0];
+                var username = decodedStr.email;
                 console.log(username);
                 this.$rootScope.currentUser = this.isLoggedIn();
                 this.$rootScope.username = username;

@@ -4,7 +4,7 @@
 <head>
   <title>dreamjournal</title>
   <meta charset="utf-8">
-  <base href="/" />  
+  <base href="/" />
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" media="screen" title="no title">
@@ -31,8 +31,8 @@
       <span flex></span>
       <div layout="row">
         <div layout-align="end end" layout="row"  >
-          <md-button class="nav-btn btnCls" ng-click="controller.home()" md-no-ink>Home</md-button>
           <div ng-if="currentUser === false">
+            <md-button class="nav-btn btnCls" ng-click="controller.home()" md-no-ink>Home</md-button>
             <md-button class="nav-btn btnCls" ng-click="controller.login()">Login</md-button>
             <md-button class="nav-btn btnCls" ng-click="controller.register()">Register</md-button>
           </div>

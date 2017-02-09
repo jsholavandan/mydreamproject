@@ -23,7 +23,7 @@ namespace dreamjournal.Controllers {
         if(this.$rootScope.currentUser === false){
           this.$state.go('home');
         }
-        this.accountService.getUser(this.$rootScope.username).$promise.then((users) => {
+        this.accountService.getUser(this.$rootScope.username).$promise.then((users) => {          
           for(let i=0;i<users.length;i++){
             this.user = users[i];
           }

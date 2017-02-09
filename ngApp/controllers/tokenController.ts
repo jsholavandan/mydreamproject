@@ -52,7 +52,7 @@ namespace dreamjournal.Controllers {
           console.log(token);
           this.setToken(token);
           let decodedStr = this.decodeToken(token);
-          let username  = decodedStr.email.split('@')[0];
+          let username  = decodedStr.email;
           console.log(username);
           this.$rootScope.currentUser = this.isLoggedIn();
           this.$rootScope.username = username;
