@@ -19,7 +19,7 @@ namespace dreamjournal.Controllers {
         }
 
         public mainPage(){
-          this.$state.go('mainPage');
+          this.$state.go('optionsPage.mainPage');
         }
 
         public logout(){
@@ -31,7 +31,7 @@ namespace dreamjournal.Controllers {
 
         public search(){
           if(this.$rootScope.currentUser){
-            this.$state.go('searchTxtDreams', {txt: this.searchTxt});
+            this.$state.go('optionsPage.searchTxtDreams', {txt: this.searchTxt});
           }else{
               console.log(this.searchTxt);
             this.$state.go('searchPublic',{txt: this.searchTxt});

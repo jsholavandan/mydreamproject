@@ -42,7 +42,7 @@ var dreamjournal;
             }
             SearchTextController.prototype.closeDialog = function (flash) {
                 if (flash.type === 'info' || flash.type === 'danger') {
-                    this.$state.go('mainPage');
+                    this.$state.go('optionsPage.mainPage');
                 }
             };
             SearchTextController.prototype.editDream = function (id) {

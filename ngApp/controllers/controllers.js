@@ -31,7 +31,7 @@ var dreamjournal;
                 this.$state.go('register');
             };
             MainController.prototype.mainPage = function () {
-                this.$state.go('mainPage');
+                this.$state.go('optionsPage.mainPage');
             };
             MainController.prototype.logout = function () {
                 this.$rootScope.currentUser = false;
@@ -41,7 +41,7 @@ var dreamjournal;
             };
             MainController.prototype.search = function () {
                 if (this.$rootScope.currentUser) {
-                    this.$state.go('searchTxtDreams', { txt: this.searchTxt });
+                    this.$state.go('optionsPage.searchTxtDreams', { txt: this.searchTxt });
                 }
                 else {
                     console.log(this.searchTxt);

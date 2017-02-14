@@ -25,19 +25,19 @@ namespace dreamjournal {
               controller:dreamjournal.Controllers.AccountController,
               controllerAs:'controller'
             })
-            .state("mainPage", {
+            .state("optionsPage.mainPage", {
               url: '/mainPage',
               templateUrl: '/ngApp/views/mainPage.html',
               controller: dreamjournal.Controllers.MainPageController,
               controllerAs: 'controller'
             })
-            .state('addDream', {
+            .state('optionsPage.addDream', {
               url:'/addDream',
               templateUrl: '/ngApp/views/addDream.html',
               controller: dreamjournal.Controllers.AddDreamController,
               controllerAs: 'controller'
             })
-            .state('dreamJournal', {
+            .state('optionsPage.dreamJournal', {
               url: '/dreamJournal',
               templateUrl: '/ngApp/views/dreamJournal.html',
               controller: dreamjournal.Controllers.DreamJournalController,
@@ -55,25 +55,25 @@ namespace dreamjournal {
               controller: dreamjournal.Controllers.ShowDreamController,
               controllerAs: 'controller'
             })
-            .state('searchTxtDreams', {
+            .state('optionsPage.searchTxtDreams', {
               url: '/searchTxtDreams/:txt',
               templateUrl:'/ngApp/views/searchDreams.html',
               controller: dreamjournal.Controllers.SearchTextController,
               controllerAs: 'controller'
             })
-            .state('dreamGraphs', {
+            .state('optionsPage.dreamGraphs', {
               url: '/dreamGraphs',
               templateUrl: '/ngApp/views/dreamGraphs.html',
               controller: dreamjournal.Controllers.DreamGraphController,
               controllerAs: 'controller'
             })
-            .state('dreamCalendar',{
+            .state('optionsPage.dreamCalendar',{
               url:'/dreamCalendar',
               templateUrl:'/ngApp/views/dreamCalendar.html',
               controller: dreamjournal.Controllers.DreamCalendarController,
               controllerAs: 'controller'
             })
-            .state('dreamProfile', {
+            .state('optionsPage.dreamProfile', {
               url:'/dreamProfile',
               templateUrl: '/ngApp/views/dreamSettings.html',
               controller: dreamjournal.Controllers.DreamProfileController,
@@ -85,13 +85,13 @@ namespace dreamjournal {
               controller:dreamjournal.Controllers.SearchTextController,
               controllerAs: 'controller'
             })
-            .state('interpret', {
+            .state('optionsPage.interpret', {
               url:'/interpret',
               templateUrl:'/ngApp/views/interpret.html',
               controller: dreamjournal.Controllers.InterpretController,
               controllerAs: "controller"
             })
-            .state('interpret.meanings',{
+            .state('optionsPage.interpret.meanings',{
               url:'/dreamMeanings/:symbol',
               templateUrl:'/ngApp/views/dreamMeanings.html',
               controller:dreamjournal.Controllers.DreamMeaningsController,
@@ -101,6 +101,12 @@ namespace dreamjournal {
               url:'/Token/:token',
               templateUrl:'/ngApp/views/token.html',
               controller: dreamjournal.Controllers.TokenController,
+              controllerAs: 'controller'
+            })
+            .state('optionsPage',{
+              url:'/optionsPage',
+              templateUrl:'/ngApp/views/optionsPage.html',
+              controller: dreamjournal.Controllers.OptionsController,
               controllerAs: 'controller'
             });
 

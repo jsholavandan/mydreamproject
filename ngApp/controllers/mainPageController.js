@@ -14,22 +14,23 @@ var dreamjournal;
                 this.selectedDiv = str;
             };
             MainPageController.prototype.addDream = function () {
-                this.$state.go('addDream');
+                this.$state.go('optionsPage.addDream');
             };
             MainPageController.prototype.dreamJournal = function () {
-                this.$state.go('dreamJournal');
+                this.$state.go('optionsPage.dreamJournal');
             };
             MainPageController.prototype.dreamGraphs = function () {
-                this.$state.go('dreamGraphs');
+                this.$state.go('optionsPage.dreamGraphs');
             };
             MainPageController.prototype.dreamCalendar = function () {
-                this.$state.go('dreamCalendar');
+                this.$state.go('optionsPage.dreamCalendar');
             };
             MainPageController.prototype.dreamProfile = function () {
-                this.$state.go('dreamProfile');
+                this.$state.go('optionsPage.dreamProfile');
             };
             MainPageController.prototype.dreamInterpretation = function () {
-                this.$state.go('interpret');
+                console.log("hello");
+                this.$state.go('optionsPage.interpret');
             };
             return MainPageController;
         }());

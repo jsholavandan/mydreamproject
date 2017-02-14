@@ -57,7 +57,7 @@ namespace dreamjournal.Controllers {
 
       public closeDialog(flash){
         if(flash.type === 'success'){
-          this.$state.go("mainPage");
+          this.$state.go("optionsPage.mainPage");
         }
       }
 

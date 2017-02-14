@@ -9,7 +9,10 @@ var dreamjournal;
                 this.Flash = Flash;
                 this.$window = $window;
                 this.$rootScope = $rootScope;
-                this.userInfo = {};
+                this.userInfo = {
+                    username: 'sai',
+                    password: 'baba'
+                };
             }
             AccountController.prototype.setToken = function (data) {
                 this.$window.localStorage.setItem("token", JSON.stringify(data.token));
@@ -34,7 +37,7 @@ var dreamjournal;
                     _this.$rootScope.currentUser = _this.isLoggedIn();
                     _this.$rootScope.username = _this.userInfo.username;
                     _this.$rootScope.$broadcast("userLoggedIn");
-                    _this.$state.go('mainPage');
+                    _this.$state.go('optionsPage.mainPage');
                 }).catch(function (err) {
                     _this.Flash.create("danger", "Error occured. Please try again.");
                 });

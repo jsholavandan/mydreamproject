@@ -1,0 +1,18 @@
+<div class="" layout="column" layout-fill>
+  <div layout="row" flex layout-fill ng-controller="SideNavController as controller">
+    <md-sidenav class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" layout-align="start center">
+      <md-list>
+        <md-list-item><md-button class="nav-btn btnCls sideBtnCls" ng-click="controller.myAccount()">My Account</md-button></md-list-item>
+        <md-list-item><md-button class="nav-btn btnCls" ng-click="controller.addDream()">Add Dream</md-button></md-list-item>
+        <md-list-item><md-button class="nav-btn btnCls" ng-click="controller.dreamCalendar()">Dream Calendar</md-button></md-list-item>
+        <md-list-item><md-button class="nav-btn btnCls" ng-click="controller.dreamJournal()">Dream Journal</md-button></md-list-item>
+        <md-list-item><md-button class="nav-btn btnCls" ng-click="controller.dreamGraphs()">Dream Graphs</md-button></md-list-item>
+        <md-list-item><md-button class="nav-btn btnCls" ng-click="controller.dreamMeaning()">Dream Meaning</md-button></md-list-item>
+        <md-list-item><md-button class="nav-btn btnCls" ng-click="controller.settings()">Settings</md-button></md-list-item>
+      </md-list>
+    </md-sidenav>
+    <md-content layout="column" layout-fill flex>
+      <ui-view layout="column" layout-fill flex></ui-view>
+    </md-content>
+  </div>
+</div>

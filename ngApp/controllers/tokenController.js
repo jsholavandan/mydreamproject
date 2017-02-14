@@ -17,7 +17,7 @@ var dreamjournal;
                 this.$rootScope.currentUser = this.isLoggedIn();
                 this.$rootScope.username = username;
                 this.$rootScope.$broadcast("userLoggedIn");
-                this.$state.go('mainPage');
+                this.$state.go('optionsPage.mainPage');
             }
             TokenController.prototype.setToken = function (token) {
                 this.$window.localStorage.setItem("token", JSON.stringify(token));

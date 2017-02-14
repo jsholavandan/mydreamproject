@@ -1,7 +1,10 @@
 namespace dreamjournal.Controllers {
 
     export class AccountController{
-        public userInfo = {};
+        public userInfo = {
+          username:'sai',
+          password:'baba'
+        };
         public user;
 
         public setToken(data){
@@ -28,7 +31,7 @@ namespace dreamjournal.Controllers {
             this.$rootScope.currentUser = this.isLoggedIn();
             this.$rootScope.username = this.userInfo.username;
             this.$rootScope.$broadcast("userLoggedIn");
-            this.$state.go('mainPage');
+            this.$state.go('optionsPage.mainPage');
           }).catch((err) => {
             this.Flash.create("danger","Error occured. Please try again.");
           });

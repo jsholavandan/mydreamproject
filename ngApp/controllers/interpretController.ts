@@ -3,7 +3,7 @@ namespace dreamjournal.Controllers {
       public symbol;
 
       public interpretDream(){
-        this.$state.go('interpret.meanings',{symbol:this.symbol});
+        this.$state.go('optionsPage.interpret.meanings',{symbol:this.symbol});
       }
 
       constructor(private $state:ng.ui.IStateService){

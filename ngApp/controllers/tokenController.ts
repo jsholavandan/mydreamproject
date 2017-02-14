@@ -57,7 +57,7 @@ namespace dreamjournal.Controllers {
           this.$rootScope.currentUser = this.isLoggedIn();
           this.$rootScope.username = username;
           this.$rootScope.$broadcast("userLoggedIn");
-          this.$state.go('mainPage');
+          this.$state.go('optionsPage.mainPage');
       }
     }
     angular.module("dreamjournal").controller("TokenController", TokenController);

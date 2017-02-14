@@ -484,3 +484,71 @@ textarea{
   padding-top:15px;
 }
 /* dream meaning */
+
+/* side nav */
+
+md-sidenav {
+   width: 130px;
+   min-width: 130px;
+   max-width: 130px;
+}
+
+md-sidenav{
+  background-color: rgb(76, 20, 122);
+  color:white;
+}
+
+md-menu-bar button{
+  background-color: yellow;
+  font-size: 10px;
+}
+
+md-menu-content.md-menu-bar-menu.md-dense .md-button{
+  font-size:8px;
+}
+
+md-menu-content.md-menu-bar-menu.md-dense{
+  padding:0px;
+  width: 120px;
+}
+
+md-menu-item button{
+  background-color: yellow;
+  font-size: 10px;
+}
+
+md-menu button:hover{
+  background-color: yellow;
+}
+md-menu-item{
+  width:120px;
+}
+
+md-menu-bar {
+  padding: 0 10px;
+}
+md-menu-content button{
+  font-size:10px;
+}
+
+md-menu-content {
+  color: rgba(0,0,0,0.87);
+  background-color: yellow;
+  font-size:10px;
+  width: 200px;
+}
+
+.sideBtnCls{
+    max-height: 20px;
+}
+
+md-list-item.md-no-proxy, md-list-item .md-no-style {
+  min-height: 25px;
+  max-height:25px;
+}
+
+md-list{
+  padding-top: 25px;
+}
+
+/* side nav */

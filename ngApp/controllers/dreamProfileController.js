@@ -28,7 +28,7 @@ var dreamjournal;
             };
             DreamProfileController.prototype.closeDialog = function (flash) {
                 if (flash.type === 'success') {
-                    this.$state.go("mainPage");
+                    this.$state.go("optionsPage.mainPage");
                 }
             };
             return DreamProfileController;

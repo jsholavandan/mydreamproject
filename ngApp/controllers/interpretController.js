@@ -7,7 +7,7 @@ var dreamjournal;
                 this.$state = $state;
             }
             InterpretController.prototype.interpretDream = function () {
-                this.$state.go('interpret.meanings', { symbol: this.symbol });
+                this.$state.go('optionsPage.interpret.meanings', { symbol: this.symbol });
             };
             return InterpretController;
         }());

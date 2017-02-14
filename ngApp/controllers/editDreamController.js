@@ -66,7 +66,7 @@ var dreamjournal;
             };
             EditDreamController.prototype.closeDialog = function (flash) {
                 if (flash.type === 'success') {
-                    this.$state.go("dreamJournal");
+                    this.$state.go("optionsPage.dreamJournal");
                 }
             };
             return EditDreamController;
