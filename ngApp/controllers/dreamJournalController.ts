@@ -7,11 +7,15 @@ namespace dreamjournal.Controllers {
     public itemsPerPage = 10;
 
     public editDream(id){
-      this.$state.go('editDream',{id:id});
+      this.$state.go('optionsPage.editDream',{id:id});
     }
 
     public showDream(id){
-      this.$state.go('showDream', {id:id});
+  /*    if(this.$rootScope.currentUser === false){
+        this.$state.go('showDream', {id:id, prev:'home'});
+      }else{  */
+        this.$state.go('optionsPage.showDream', {id:id, prev:'journal'});
+  //    }
     }
 
     public closeDialog(flash){

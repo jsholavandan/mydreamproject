@@ -55,7 +55,7 @@ var dreamjournal;
                         }
                     }
                     if (id !== 0) {
-                        this.$state.go('showDream', { id: id });
+                        this.$state.go('optionsPage.showDream', { id: id, prev: 'calendar' });
                     }
                 }
             };

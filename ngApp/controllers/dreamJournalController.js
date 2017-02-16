@@ -19,10 +19,10 @@ var dreamjournal;
                 });
             }
             DreamJournalController.prototype.editDream = function (id) {
-                this.$state.go('editDream', { id: id });
+                this.$state.go('optionsPage.editDream', { id: id });
             };
             DreamJournalController.prototype.showDream = function (id) {
-                this.$state.go('showDream', { id: id });
+                this.$state.go('optionsPage.showDream', { id: id, prev: 'journal' });
             };
             DreamJournalController.prototype.closeDialog = function (flash) {
             };

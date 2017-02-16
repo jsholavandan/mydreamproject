@@ -49,7 +49,7 @@ var dreamjournal;
                 }
             };
             MainController.prototype.showDream = function (id) {
-                this.$state.go('showDream', { id: id });
+                this.$state.go('showDream', { id: id, prev: 'home' });
             };
             return MainController;
         }());

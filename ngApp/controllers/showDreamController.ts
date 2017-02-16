@@ -4,6 +4,7 @@ namespace dreamjournal.Controllers {
       public dream;
       public emoteString;
       public typeString;
+      private previousUrl;
       public comment ={
         commentTitle:'',
         text:''
@@ -27,12 +28,25 @@ namespace dreamjournal.Controllers {
         });
       }
 
+      public close(){
+        console.log(this.previousUrl);
+        if(this.previousUrl === 'calendar'){
+          this.$state.go("optionsPage.dreamCalendar");
+        }else if(this.previousUrl === 'journal'){
+          this.$state.go("optionsPage.dreamJournal");
+        }else{
+          this.$state.go('home');
+        }
+      }
+
       constructor(private dreamService: dreamjournal.Services.DreamService,
                   private $stateParams: ng.ui.IStateParamsService,
                   private $state: ng.ui.IStateService,
                   private Flash,
-                  private $rootScope: ng.IRootScopeService){
+                  private $rootScope: ng.IRootScopeService,
+                  private $location:ng.ILocationService){
             let dreamId = this.$stateParams['id'];
+            this.previousUrl = this.$stateParams['prev'];
             this.dreamService.getDream(dreamId).$promise.then((dream) => {
               this.dream = dream;
               this.emoteString = dream.emotions.join(' , ');
@@ -40,6 +54,7 @@ namespace dreamjournal.Controllers {
             }).catch((err) => {
               console.log(err);
             });
+
       }
     }
     angular.module('dreamjournal').controller('ShowDreamController', ShowDreamController);

@@ -328,7 +328,7 @@ textarea{
 .dreamContentCls{
   border: 1px solid white;
   border-radius: 5px;
-  height: 120px;
+  height: 80px;
   font-size: 12px;
 }
 
@@ -341,12 +341,12 @@ textarea{
 }
 
 .form-cls{
-  margin-top: 15px;
+  margin-top: 10px;
   border: 1px solid white;
   border-radius: 5px;
 }
 .formBodyCls{
-  padding: 15px 15px 0px 15px;
+  padding: 10px 15px 0px 15px;
 }
 .formBtnCls{
   position: relative;
@@ -358,9 +358,12 @@ textarea{
 }
 
 .commentsDivCls{
-  margin-top:15px;
+  margin-top:10px;
   border:1px solid white;
   border-radius: 5px;
+  margin-bottom:5px;
+  height: 150px;
+  overflow-y:auto;
 }
 
 .commentCls{
@@ -388,7 +391,10 @@ textarea{
  color: #fff;
  font-weight: bold;
 }
-
+/*
+.showBtnCls{
+  margin-top: 5px;
+}*/
 /* show dream */
 
 /* Settings */

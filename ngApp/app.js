@@ -44,8 +44,20 @@ var dreamjournal;
             controller: dreamjournal.Controllers.EditDreamController,
             controllerAs: "controller"
         })
+            .state('optionsPage.editDream', {
+            url: '/editDream/:id',
+            templateUrl: '/ngApp/views/editDream.html',
+            controller: dreamjournal.Controllers.EditDreamController,
+            controllerAs: "controller"
+        })
             .state('showDream', {
-            url: '/showDream/:id',
+            url: '/showDream/:id/:prev',
+            templateUrl: '/ngApp/views/dream.html',
+            controller: dreamjournal.Controllers.ShowDreamController,
+            controllerAs: 'controller'
+        })
+            .state('optionsPage.showDream', {
+            url: '/showDream/:id/:prev',
             templateUrl: '/ngApp/views/dream.html',
             controller: dreamjournal.Controllers.ShowDreamController,
             controllerAs: 'controller'

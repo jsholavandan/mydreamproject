@@ -3,18 +3,20 @@ var dreamjournal;
     var Controllers;
     (function (Controllers) {
         var ShowDreamController = (function () {
-            function ShowDreamController(dreamService, $stateParams, $state, Flash, $rootScope) {
+            function ShowDreamController(dreamService, $stateParams, $state, Flash, $rootScope, $location) {
                 var _this = this;
                 this.dreamService = dreamService;
                 this.$stateParams = $stateParams;
                 this.$state = $state;
                 this.Flash = Flash;
                 this.$rootScope = $rootScope;
+                this.$location = $location;
                 this.comment = {
                     commentTitle: '',
                     text: ''
                 };
                 var dreamId = this.$stateParams['id'];
+                this.previousUrl = this.$stateParams['prev'];
                 this.dreamService.getDream(dreamId).$promise.then(function (dream) {
                     _this.dream = dream;
                     _this.emoteString = dream.emotions.join(' , ');
@@ -40,6 +42,18 @@ var dreamjournal;
                 }).catch(function (err) {
                     _this.Flash.create('danger', "Error occured. Please try again.");
                 });
+            };
+            ShowDreamController.prototype.close = function () {
+                console.log(this.previousUrl);
+                if (this.previousUrl === 'calendar') {
+                    this.$state.go("optionsPage.dreamCalendar");
+                }
+                else if (this.previousUrl === 'journal') {
+                    this.$state.go("optionsPage.dreamJournal");
+                }
+                else {
+                    this.$state.go('home');
+                }
             };
             return ShowDreamController;
         }());

@@ -39,7 +39,7 @@ namespace dreamjournal.Controllers {
         }
 
         public showDream(id){
-          this.$state.go('showDream', {id:id});
+          this.$state.go('showDream', {id:id, prev:'home'});
         }
 
 
