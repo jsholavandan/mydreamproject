@@ -29,7 +29,7 @@ var dreamjournal;
             };
             SideNavController.prototype.dreamMeaning = function () {
                 this.$rootScope.fromHome = false;
-                this.$state.go("optionsPage.dreamMeanings");
+                this.$state.go("optionsPage.interpret");
             };
             SideNavController.prototype.settings = function () {
                 this.$rootScope.fromHome = false;

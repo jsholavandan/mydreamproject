@@ -28,7 +28,7 @@ namespace dreamjournal.Controllers {
 
       public dreamMeaning(){
         this.$rootScope.fromHome = false;
-        this.$state.go("optionsPage.dreamMeanings");
+        this.$state.go("optionsPage.interpret");
       }
 
       public settings(){

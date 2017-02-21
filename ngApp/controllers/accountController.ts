@@ -1,10 +1,7 @@
 namespace dreamjournal.Controllers {
 
     export class AccountController{
-        public userInfo = {
-          username:'sai',
-          password:'baba'
-        };
+        public userInfo = {};
         public user;
 
         public setToken(data){
