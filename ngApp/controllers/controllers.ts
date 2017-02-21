@@ -8,17 +8,21 @@ namespace dreamjournal.Controllers {
       public itemsPerPage = 5;
 
         public home(){
+          this.$rootScope.fromHome = true;
           this.$state.go('home');
         }
         public login(){
+          this.$rootScope.fromHome = false;
           this.$state.go('login');
         }
 
         public register(){
+          this.$rootScope.fromHome = false;
           this.$state.go('register');
         }
 
         public mainPage(){
+          this.$rootScope.fromHome = false;
           this.$state.go('optionsPage.mainPage');
         }
 
@@ -26,15 +30,16 @@ namespace dreamjournal.Controllers {
           this.$rootScope.currentUser = false;
           this.$rootScope.username = null;
           this.$window.localStorage.removeItem('token');
+          this.$rootScope.fromHome = true;
           this.$state.go('home');
         }
 
         public search(){
-          if(this.$rootScope.currentUser){
-            this.$state.go('optionsPage.searchTxtDreams', {txt: this.searchTxt});
-          }else{
-              console.log(this.searchTxt);
+          if(typeof this.$rootScope.fromHome === 'undefined' || this.$rootScope.fromHome === true){
             this.$state.go('searchPublic',{txt: this.searchTxt});
+          }else{
+            console.log(this.searchTxt);
+            this.$state.go('optionsPage.searchTxtDreams', {txt: this.searchTxt});
           }
         }
 
@@ -48,8 +53,9 @@ namespace dreamjournal.Controllers {
                     private $rootScope:ng.IRootScopeService,
                     private dreamService: dreamjournal.Services.DreamService,
                     private Flash){
-
-            this.$rootScope.currentUser = false;
+            if(typeof this.$rootScope.currentUser === 'undefined'){
+              this.$rootScope.currentUser = false;
+            }            
             this.dreamService.listPublicDreams().$promise.then((dreams) => {
               this.dreams = dreams;
               this.totalItems = dreams.length;

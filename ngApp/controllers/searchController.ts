@@ -28,8 +28,8 @@ namespace dreamjournal.Controllers {
                   private $state:ng.ui.IStateService){
           let srchTxt = this.$stateParams['txt'];
           console.log(srchTxt);
-          if(this.$rootScope.currentUser){
-            this.searchService.searchDreams(this.$rootScope.username, srchTxt).$promise.then((dreams) => {
+          if(typeof this.$rootScope.fromHome === 'undefined' || this.$rootScope.fromHome === true){
+            this.searchService.searchPublicDreams(srchTxt).$promise.then((dreams) => {
               this.dreams = dreams;
               this.totalItems = dreams.length;
               this.currentPage = 1;
@@ -40,8 +40,8 @@ namespace dreamjournal.Controllers {
               console.log(err);
               this.Flash.create('danger', 'Error occured. Please try again');
             });
-          }else{
-            this.searchService.searchPublicDreams(srchTxt).$promise.then((dreams) => {
+          }else if(this.$rootScope.username !== false){
+            this.searchService.searchDreams(this.$rootScope.username, srchTxt).$promise.then((dreams) => {
               this.dreams = dreams;
               this.totalItems = dreams.length;
               this.currentPage = 1;

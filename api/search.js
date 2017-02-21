@@ -4,7 +4,7 @@ var dream_1 = require("../models/dream");
 var router = express.Router();
 router.get('/searchPublic', function (req, res) {
     var searchTxt = req.query.searchTxt;
-    dream_1.default.find({ "$text": { "$search": searchTxt } }).then(function (dreams) {
+    dream_1.default.find({ "$text": { "$search": searchTxt }, pvt: false }).then(function (dreams) {
         res.json(dreams);
     }).catch(function (err) {
         console.log(err);

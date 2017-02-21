@@ -59,6 +59,7 @@ namespace dreamjournal.Controllers {
                 private Flash,
                 private $rootScope:ng.IRootScopeService){
       if(this.$rootScope.currentUser === false){
+        this.$rootScope.fromHome = true;
         this.$state.go('home');
       }
       let dreamId = this.$stateParams['id'];

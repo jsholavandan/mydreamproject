@@ -34,6 +34,7 @@ var dreamjournal;
                     "shadowRadius": 10
                 };
                 if (this.$rootScope.currentUser === false) {
+                    this.$rootScope.fromHome = true;
                     this.$state.go('home');
                 }
             }

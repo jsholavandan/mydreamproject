@@ -13,8 +13,8 @@ var dreamjournal;
                 this.itemsPerPage = 10;
                 var srchTxt = this.$stateParams['txt'];
                 console.log(srchTxt);
-                if (this.$rootScope.currentUser) {
-                    this.searchService.searchDreams(this.$rootScope.username, srchTxt).$promise.then(function (dreams) {
+                if (typeof this.$rootScope.fromHome === 'undefined' || this.$rootScope.fromHome === true) {
+                    this.searchService.searchPublicDreams(srchTxt).$promise.then(function (dreams) {
                         _this.dreams = dreams;
                         _this.totalItems = dreams.length;
                         _this.currentPage = 1;
@@ -26,8 +26,8 @@ var dreamjournal;
                         _this.Flash.create('danger', 'Error occured. Please try again');
                     });
                 }
-                else {
-                    this.searchService.searchPublicDreams(srchTxt).$promise.then(function (dreams) {
+                else if (this.$rootScope.username !== false) {
+                    this.searchService.searchDreams(this.$rootScope.username, srchTxt).$promise.then(function (dreams) {
                         _this.dreams = dreams;
                         _this.totalItems = dreams.length;
                         _this.currentPage = 1;

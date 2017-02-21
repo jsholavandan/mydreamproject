@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   let obj = req.body;
   Dream.create(obj).then((newDream) => {
-    res.json({message:'Photo saved.'});
+    res.json({message:'Dream saved.'});
   }).catch((err) => {
     res.status(500);
     console.log(err);
